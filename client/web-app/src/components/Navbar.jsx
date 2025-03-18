@@ -2,8 +2,6 @@ import { NavLink, useSearchParams } from "react-router";
 
 function Navbar() {
   const [searchParams] = useSearchParams();
-
-  console.log(searchParams.get("category"));
   return (
     <div className="flex items-center justify-between gap-6 bg-[#161D2f] p-5">
       <NavLink to={"/"} className={"grow"}>
@@ -14,11 +12,11 @@ function Navbar() {
         <img src="/src/assets/icon-nav-home.svg" alt="home icon" />
       </NavLink>
 
-      <NavLink to={"/?category=Movies"}>
+      <NavLink to={"/?category=Movie"}>
         <img src="/src/assets/icon-nav-movies.svg" alt="movies icon" />
       </NavLink>
 
-      <NavLink to={"/?category=Tv Series"}>
+      <NavLink to={"/?category=TV Series"}>
         <img src="/src/assets/icon-nav-tv-series.svg" alt="tv series icon" />
       </NavLink>
 
