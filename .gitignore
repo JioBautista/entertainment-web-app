@@ -1,0 +1,89 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+
+# Node.js
+/node_modules
+/build
+/dist
+/.npm
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs and editors
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: if you have a coverage folder from tests
+/coverage
+
+# Optional: if you use a database like sqlite
+*.sqlite
+*.sqlite3
+
+# Optional: if you have upload directories
+/uploads
+
+# Optional: if you have any secret keys or certs
+/keys
+*.pem
+*.key
+*.cert
+
+# Optional: if you use docker
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile
+
+# Optional: if you use serverless
+.serverless
+
+# Optional: if you use a package-lock.json or yarn.lock, you may want to keep one of them, but not both.
+yarn.lock
+package-lock.json
+
+# Optional: If you use pnpm
+pnpm-lock.yaml
