@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Trending from "./components/Trending";
+import Recommended from "./components/Recommended";
 import data from "./data/data.json";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Searchbar />
       <Trending data={data} />
+      <Recommended data={data} />
     </div>
   );
 }
