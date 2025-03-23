@@ -8,7 +8,12 @@ function RecommendedTitle({ field }) {
       <img src={`${new_src}`} className="rounded-md" />
 
       <button className="rounded-full p-2 bg-[#10141E]/75 ml-auto absolute top-2 right-2">
-        <img src="/src/assets/icon-bookmark-empty.svg" alt="bookmark icon" />
+        <img
+          src={`/src/assets/icon-bookmark-${
+            field.isBookmarked === true ? "full" : "empty"
+          }.svg`}
+          alt="bookmark icon"
+        />
       </button>
 
       <div className="flex items-center gap-1 mt-8 text-xs text-gray-300">
