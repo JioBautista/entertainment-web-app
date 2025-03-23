@@ -1,16 +1,17 @@
-function TrendingTitle({ field }) {
-  const img_src = field.thumbnail.trending.small;
+import React from "react";
+
+function RecommendedTitle({ field }) {
+  const img_src = field.thumbnail.regular.small;
   const new_src = img_src.replace("./assets/", "/src/assets/");
   return (
-    <div
-      className={`p-3 bg-no-repeat bg-contain inline-block rounded-md w-[240px] h-[140px]`}
-      style={{ backgroundImage: `url(${new_src})` }}
-    >
-      <button className="rounded-full p-2 bg-[#10141E]/75 ml-auto block">
+    <div className="relative">
+      <img src={`${new_src}`} className="rounded-md" />
+
+      <button className="rounded-full p-2 bg-[#10141E]/75 ml-auto absolute top-2 right-2">
         <img src="/src/assets/icon-bookmark-empty.svg" alt="bookmark icon" />
       </button>
 
-      <div className="flex items-center gap-1 mt-8 text-sm text-gray-300">
+      <div className="flex items-center gap-1 mt-8 text-xs text-gray-300">
         <p>{field.year}</p>
         <span>&#8226;</span>
         <img
@@ -22,10 +23,9 @@ function TrendingTitle({ field }) {
         <span>&#8226;</span>
         <p>{field.rating}</p>
       </div>
-
-      <h1 className="font-bold text-md">{field.title}</h1>
+      <h1 className="font-bold text-sm">{field.title}</h1>
     </div>
   );
 }
 
-export default TrendingTitle;
+export default RecommendedTitle;
