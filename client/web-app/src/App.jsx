@@ -12,11 +12,19 @@ function App() {
     ? data.filter((element) => element.category === filter)
     : data;
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pb-5">
       <Navbar />
       <Searchbar />
-      <Trending data={data} />
-      <Recommended data={data} />
+      {filter ? null : <Trending data={data} />}
+
+      <div className="p-5">
+        {filter ? (
+          <h1 className="text-xl mb-5">{filter}</h1>
+        ) : (
+          <h1 className="text-xl mb-5">Recommended for you</h1>
+        )}
+        <Recommended data={filteredData} />
+      </div>
     </div>
   );
 }
