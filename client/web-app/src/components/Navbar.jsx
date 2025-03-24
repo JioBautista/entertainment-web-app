@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div className="flex items-center justify-between gap-6 bg-[#161D2f] p-5 md:flex-col md:justify-start md:rounded-2xl md:self-start md:h-[960px]">
       <NavLink to={"/"} className={"grow md:grow-0"}>
-        <img src="/public/assets/logo.svg" alt="logo icon" />
+        <img src="/assets/logo.svg" alt="logo icon" />
       </NavLink>
 
       <NavLink to={"/"}>
