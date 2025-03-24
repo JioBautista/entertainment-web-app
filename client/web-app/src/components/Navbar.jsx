@@ -8,24 +8,24 @@ function Navbar() {
       </NavLink>
 
       <NavLink to={"/"}>
-        <img src="/public/assets/icon-nav-home.svg" alt="home icon" />
+        <img src="/assets/icon-nav-home.svg" alt="home icon" />
       </NavLink>
 
       <NavLink to={"/?category=Movie"}>
-        <img src="/public/assets/icon-nav-movies.svg" alt="movies icon" />
+        <img src="/assets/icon-nav-movies.svg" alt="movies icon" />
       </NavLink>
 
       <NavLink to={"/?category=TV Series"}>
-        <img src="/public/assets/icon-nav-tv-series.svg" alt="tv series icon" />
+        <img src="/assets/icon-nav-tv-series.svg" alt="tv series icon" />
       </NavLink>
 
       <NavLink to={"/?isBookMarked=true"} className={"grow"}>
-        <img src="/public/assets/icon-nav-bookmark.svg" alt="bookmark icon" />
+        <img src="/assets/icon-nav-bookmark.svg" alt="bookmark icon" />
       </NavLink>
 
       <div className="grow md:grow-0">
         <img
-          src="/public/assets/image-avatar.png"
+          src="/assets/image-avatar.png"
           alt="user icon"
           width={50}
           className="ml-auto"
