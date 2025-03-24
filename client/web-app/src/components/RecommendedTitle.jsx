@@ -2,14 +2,14 @@ import React from "react";
 
 function RecommendedTitle({ field }) {
   const img_src = field.thumbnail.regular.small;
-  const new_src = img_src.replace("./assets/", "/src/assets/");
+  const new_src = img_src.replace("./assets/", "/assets/");
   return (
     <div className="relative">
       <img src={`${new_src}`} className="rounded-md" />
 
       <button className="rounded-full p-2 bg-[#10141E]/75 ml-auto absolute top-2 right-2">
         <img
-          src={`/src/assets/icon-bookmark-${
+          src={`/assets/icon-bookmark-${
             field.isBookmarked === true ? "full" : "empty"
           }.svg`}
           alt="bookmark icon"
@@ -20,7 +20,7 @@ function RecommendedTitle({ field }) {
         <p>{field.year}</p>
         <span>&#8226;</span>
         <img
-          src={`/src/assets/icon-category-${
+          src={`/assets/icon-category-${
             field.category === "Movie" ? "movie" : "tv"
           }.svg`}
         />
