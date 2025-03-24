@@ -8,22 +8,30 @@ import data from "./data/data.json";
 function App() {
   const [searchParams] = useSearchParams();
   const filter = searchParams.get("category");
-  const filteredData = filter
-    ? data.filter((element) => element.category === filter)
-    : data;
+  const isBookmarked = searchParams.get("isBookMarked");
+  const filteredData =
+    filter || isBookmarked
+      ? data.filter(
+          (element) =>
+            element.category === filter ||
+            element.isBookmarked === JSON.parse(isBookmarked)
+        )
+      : data;
   return (
-    <div className="container mx-auto pb-5">
+    <div className="container mx-auto pb-5 md:grid md:grid-cols-10 md:py-8">
       <Navbar />
-      <Searchbar />
-      {filter ? null : <Trending data={data} />}
 
-      <div className="p-5">
-        {filter ? (
-          <h1 className="text-xl mb-5">{filter}</h1>
-        ) : (
-          <h1 className="text-xl mb-5">Recommended for you</h1>
-        )}
-        <Recommended data={filteredData} />
+      <div className="md:col-span-9">
+        <Searchbar />
+        {filter || isBookmarked ? null : <Trending data={data} />}
+        <div className="p-5">
+          {filter ? (
+            <h1 className="text-xl mb-5">{filter}</h1>
+          ) : isBookmarked ? null : (
+            <h1 className="text-xl mb-5">Recommended for you</h1>
+          )}
+          <Recommended data={filteredData} />
+        </div>
       </div>
     </div>
   );
