@@ -1,8 +1,6 @@
 function TrendingTitle({ field }) {
   const img_src = field.thumbnail.regular.large;
   const new_src = img_src.replace("./assets/", "/assets/");
-
-  console.log(new_src);
   return (
     <div
       className={`p-3 inline-block rounded-md w-[240px] h-[140px] md:w-[470px] md:h-[230px] bg-cover bg-no-repeat bg-center`}
