@@ -1,24 +1,23 @@
 const express = require("express");
+const cors = require("cors");
 const router = express.Router();
 require("dotenv").config();
 
-router.get("/", async (req, res) => {
-  function getRandomLetter(letters) {
-    const randomIndex = Math.floor(Math.random() * letters.length);
-    return letters[randomIndex];
-  }
-  const letters = ["a", "b", "c"];
-  const randomLetter = getRandomLetter(letters);
-  console.log(randomLetter);
-  const url = `http://www.omdbapi.com/?apikey=${process.env.API_KEY}s=b&y=2024&page=5`;
+router.get("/api/trending", cors(), async (req, res) => {
+  const url = `https://api.themoviedb.org/3/trending/all/day?language=en-US`;
+  const options = {
+    headers: {
+      accept: `application/json`,
+      Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
+    },
+  };
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, options);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
 
     const json = await response.json();
-    console.log(json);
     res.json(json);
   } catch (error) {
     console.error(error.message);
