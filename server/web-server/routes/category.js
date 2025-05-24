@@ -3,8 +3,9 @@ const cors = require("cors");
 const router = express.Router();
 require("dotenv").config();
 
-router.get("/api/popular", cors(), async (req, res) => {
-  const url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`;
+router.get("/api/:category", cors(), async (req, res) => {
+  const category = req.params.category;
+  const url = `https://api.themoviedb.org/3/${category}/top_rated?language=en-US&page=1`;
   const options = {
     headers: {
       accept: `application/json`,

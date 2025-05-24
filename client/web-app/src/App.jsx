@@ -2,25 +2,25 @@ import { useSearchParams } from "react-router";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import Trending from "./components/Trending";
-import Recommended from "./components/Recommended";
+import Category from "./components/Category";
 
 function App() {
   const [searchParams] = useSearchParams();
-  const filter = searchParams.get("category");
+  const category = searchParams.get("category");
   const isBookmarked = searchParams.get("isBookMarked");
   return (
     <div className="container mx-auto pb-5 md:grid md:grid-cols-10 md:py-8">
       <Navbar />
       <div className="md:col-span-9">
         <Searchbar />
-        {filter || isBookmarked ? null : <Trending />}
+        {category || isBookmarked ? null : <Trending />}
         <div className="p-5">
-          {filter ? (
-            <h1 className="text-xl mb-5">{filter}</h1>
+          {category ? (
+            <h1 className="text-xl mb-5">{category}</h1>
           ) : isBookmarked ? null : (
             <h1 className="text-xl mb-5">Recommended for you</h1>
           )}
-          <Recommended />
+          <Category />
         </div>
       </div>
     </div>

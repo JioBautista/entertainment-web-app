@@ -1,6 +1,4 @@
-import React from "react";
-
-function RecommendedTitle({ field }) {
+function Title({ field }) {
   const rating = Math.round(field.vote_average);
   const date = new Date(field.release_date || field.first_air_date);
   const year = date.getFullYear();
@@ -33,4 +31,4 @@ function RecommendedTitle({ field }) {
   );
 }
 
-export default RecommendedTitle;
+export default Title;

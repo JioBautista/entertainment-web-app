@@ -15,7 +15,7 @@ function Navbar() {
         />
       </NavLink>
 
-      <NavLink to={"/?category=Movie"}>
+      <NavLink to={"/?category=movie"}>
         <img
           src="/assets/icon-nav-movies.svg"
           alt="movies icon"
@@ -23,7 +23,7 @@ function Navbar() {
         />
       </NavLink>
 
-      <NavLink to={"/?category=TV Series"}>
+      <NavLink to={"/?category=tv"}>
         <img
           src="/assets/icon-nav-tv-series.svg"
           alt="tv series icon"
