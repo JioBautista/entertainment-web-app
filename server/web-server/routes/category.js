@@ -5,7 +5,9 @@ require("dotenv").config();
 
 router.get("/api/:category", cors(), async (req, res) => {
   const category = req.params.category;
-  const url = `https://api.themoviedb.org/3/${category}/top_rated?language=en-US&page=1`;
+  const categories = `https://api.themoviedb.org/3/${category}/top_rated?language=en-US&page=1`;
+  const trending = `https://api.themoviedb.org/3/trending/all/day?language=en-US`;
+
   const options = {
     headers: {
       accept: `application/json`,
@@ -13,7 +15,10 @@ router.get("/api/:category", cors(), async (req, res) => {
     },
   };
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(
+      category === null ? categories : trending,
+      options
+    );
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }

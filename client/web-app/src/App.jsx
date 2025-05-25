@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router";
 import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
-import Trending from "./components/Trending";
 import Category from "./components/Category";
 
 function App() {
@@ -13,12 +12,11 @@ function App() {
       <Navbar />
       <div className="md:col-span-9">
         <Searchbar />
-        {category || isBookmarked ? null : <Trending />}
         <div className="p-5">
           {category ? (
             <h1 className="text-xl mb-5">{category}</h1>
           ) : isBookmarked ? null : (
-            <h1 className="text-xl mb-5">Recommended for you</h1>
+            <h1 className="text-xl mb-5">Trending</h1>
           )}
           <Category />
         </div>
